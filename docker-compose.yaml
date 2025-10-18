@@ -4,8 +4,8 @@ services:
     container_name: woodpecker-server
     restart: unless-stopped
     expose:
-      - "8001" # Web UI
-      - "8002" # RPC for agent to connect
+      - "${WOODPECKER_SERVER_ADDR}" # Web UI
+      - "${WOODPECKER_GRPC_ADDR}"   # RPC for agent to connect
     env_file:
       - .env
     volumes:

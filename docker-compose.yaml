@@ -5,11 +5,12 @@ services:
     restart: unless-stopped
     expose:
       - "${WOODPECKER_SERVER_ADDR}" # Web UI
-      - "${WOODPECKER_GRPC_ADDR}"   # RPC for agent to connect
+      - "${WOODPECKER_GRPC_ADDR}" # RPC for agent to connect
     env_file:
       - .env
     volumes:
       - woodpecker-server-data:/var/lib/woodpecker
+      - ${DIR_PATH}:${DIR_PATH}
     networks:
       - application_network
 
@@ -23,6 +24,7 @@ services:
       - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ${DIR_PATH}:${DIR_PATH}
     networks:
       - application_network
 

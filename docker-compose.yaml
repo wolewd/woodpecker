@@ -23,6 +23,7 @@ services:
       - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      - ${DIR_PATH}:${DIR_PATH}
     networks:
       - application_network
 

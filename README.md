@@ -41,8 +41,8 @@ I specifically chose an open-source CI/CD solution that's easy to set up *(sorry
     # Port for the agent to connect to the server
     WOODPECKER_GRPC_ADDR=:8002
 
-    # Web UI address e.g. https://ci.your-domain.com (replace with your domain)
-    WOODPECKER_HOST=http://localhost:8001
+    # Web UI address (replace with your domain)
+    WOODPECKER_HOST=https://ci.your-domain.com
 
     # Shared secret between server and agent
     WOODPECKER_SECRET=supersecret

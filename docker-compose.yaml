@@ -10,7 +10,6 @@ services:
       - .env
     volumes:
       - woodpecker-server-data:/var/lib/woodpecker
-      - ${DIR_PATH}:${DIR_PATH}
     networks:
       - application_network
 
@@ -24,7 +23,6 @@ services:
       - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ${DIR_PATH}:${DIR_PATH}
     networks:
       - application_network
 

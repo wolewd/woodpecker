@@ -5,6 +5,9 @@ workspace:
 steps:
   deploy:
     image: docker:latest
+    when:
+      event: [push]
+      branch: [main]
     commands:
       - cd /home/user/your-repo                     # I assume you use Dockerfile to build your image and deploy it using sparated docker-compose file
       - docker build -t image-name:latest .

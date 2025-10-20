@@ -1,0 +1,16 @@
+workspace:
+  base: /home/user    # this is your root path for all your cloned repository
+  path: your-repo     # this is where your project. each project should have .woodpecker.yaml
+
+steps:
+  deploy:
+    image: docker:latest
+    commands:
+      - cd /home/user/your-repo                     # I assume you use Dockerfile to build your image and deploy it using sparated docker-compose file
+      - docker build -t image-name:latest .
+      - docker compose down
+      - docker compose up -d
+      - docker system prune -f                      # clear dangling images
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock   # mount docker socket so docker can access your cloned repo
+      - /home/user/your-repo:/home/user/your-repo   # mount your cloned repo to load any dependencies like .env

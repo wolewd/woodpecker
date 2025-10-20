@@ -128,4 +128,6 @@ You can create new client inside your github account following this step:
 
 3. This repository does not yet include a guide for setting up CI/CD pipelines — I plan to add that soon.
 
+4. You should create your own `.woodpecker.yaml` since I don't include the tutorial here. I just include `.woodpecker.yaml.example` for your references.
+
 ---

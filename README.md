@@ -54,6 +54,10 @@ I specifically chose an open-source CI/CD solution that's easy to set up *(sorry
     WOODPECKER_GITHUB_CLIENT=your_github_client_id
     WOODPECKER_GITHUB_SECRET=your_github_client_secret
 
+    # Set your github account to be admin
+    WOODPECKER_ADMIN=your_github_username
+    WOODPECKER_DEFAULT_TRUSTED=true
+
     # Agent connection target (Docker container format)
     WOODPECKER_SERVER=woodpecker-server:8002
 
@@ -62,6 +66,9 @@ I specifically chose an open-source CI/CD solution that's easy to set up *(sorry
 
     # Set to true to allow initial registration (disable after first login)
     WOODPECKER_OPEN=true
+
+    # directory where you clone all of your repository to run in your vps [pwd]
+    DIR_PATH=/home/user
     ```
 
 4. Run the container:
@@ -91,7 +98,7 @@ I specifically chose an open-source CI/CD solution that's easy to set up *(sorry
 
 You can create new client inside your github account following this step:
 
-1. Go to `Settings` -> `Developer Settings` -> `OAuth Apps` -> `New OAuth Apps` 
+1. Go to `Settings` -> `Developer Settings` -> `OAuth Apps` -> `New OAuth Apps`
 
 
 2. Set `Application name` to anything you like

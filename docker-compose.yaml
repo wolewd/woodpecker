@@ -1,6 +1,6 @@
 services:
   woodpecker-server:
-    image: woodpeckerci/woodpecker-server:v3.10-alpine
+    image: woodpeckerci/woodpecker-server:v3.11.0
     container_name: woodpecker-server
     restart: unless-stopped
     expose:
@@ -14,7 +14,7 @@ services:
       - application_network
 
   woodpecker-agent:
-    image: woodpeckerci/woodpecker-agent:v3.10-alpine
+    image: woodpeckerci/woodpecker-agent:v3.11.0
     container_name: woodpecker-agent
     restart: unless-stopped
     depends_on:
